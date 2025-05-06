@@ -171,9 +171,6 @@ const work = {
   label: "Work",
   title: `Projects – ${person.name}`,
   description: `Projects by ${person.name}`,
-  projects: [
-    // Add more projects here if needed
-  ],
 };
 
 const gallery = {
