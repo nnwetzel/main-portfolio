@@ -5,14 +5,12 @@ export {
   effects,
   style,
   display,
-  mailchimp,
   baseURL,
   font,
 } from "@/app/resources/config";
 export {
   person,
   social,
-  newsletter,
   home,
   about,
   blog,
