@@ -37,7 +37,7 @@ const home = {
   path: "/",
   image: "",
   label: "Home",
-  title: `${person.name}&rsquo;s Portfolio`,
+  title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Hey, I'm Nathaniel</>,
   subline: (
