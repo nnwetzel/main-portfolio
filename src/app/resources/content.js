@@ -172,11 +172,6 @@ const work = {
   title: `Projects – ${person.name}`,
   description: `Projects by ${person.name}`,
   projects: [
-    {
-      title: "GeoChange Detection API",
-      slug: "geochange-detection-api",
-      description: "FastAPI service for automated geospatial change detection using GEE.",
-    },
     // Add more projects here if needed
   ],
 };
