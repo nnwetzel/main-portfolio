@@ -188,11 +188,16 @@ const work = {
 const gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
+  title: `Gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
   images: [
     {
       src: "/images/gallery/IMG_5681.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/IMG_0386.jpg",
       alt: "image",
       orientation: "horizontal",
     },
