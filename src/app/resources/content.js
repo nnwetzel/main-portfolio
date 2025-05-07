@@ -4,7 +4,7 @@ const person = {
   firstName: "Nathaniel",
   lastName: "Wetzel",
   get name() {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this.firstName}`;
   },
   role: "Software Engineer",
   avatar: "",
