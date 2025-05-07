@@ -14,8 +14,13 @@ const TRANSITION_SECTION = {
   ease: "easeOut",
 };
 
+interface TrackInfo {
+  title: string;
+  artist: string;
+}
+
 export default function NowPlaying() {
-  const [track, setTrack] = useState<{ title: string; artist: string } | null>(null);
+  const [track, setTrack] = useState<TrackInfo | null>(null);
 
   useEffect(() => {
     fetch("https://lastfm-last-played.biancarosa.com.br/natsoysauce/latest-song")
@@ -24,7 +29,7 @@ export default function NowPlaying() {
         const { name, artist } = json.track;
         setTrack({
           title: name,
-          artist: artist["#text"],
+          artist: artist?.["#text"] ?? "",
         });
       })
       .catch(() => {
@@ -32,22 +37,39 @@ export default function NowPlaying() {
       });
   }, []);
 
+  if (!track) return null;
+
+  const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(
+    `${track.title} ${track.artist}`
+  )}`;
+
   return (
     <motion.section
-    variants={VARIANTS_SECTION}
-    transition={TRANSITION_SECTION}
-    initial="hidden"
-    animate="show"
+      variants={VARIANTS_SECTION}
+      transition={TRANSITION_SECTION}
+      initial="hidden"
+      animate="show"
     >
-    <div className="max-w-[42rem] w-full text-left px-6 sm:px-0 space-y-5">
-
-    <Text className="mt-2 text-base font-medium text-zinc-100 dark:text-white">
-        🎧 <strong>{track?.title}</strong>
-        {track?.artist && (
-        <span className="font-normal text-zinc-300"> – {track.artist}</span>
-        )}
-    </Text>
-    </div>
+      <div className="max-w-[42rem] w-full text-left px-6 sm:px-0 space-y-5">
+        <Text className="mt-2 text-base font-medium text-zinc-100 dark:text-white">
+          🎧{" "}
+          {track.title !== "Unavailable" ? (
+            <a
+              href={spotifySearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold underline hover:opacity-80 transition"
+            >
+              {track.title}
+            </a>
+          ) : (
+            <strong>{track.title}</strong>
+          )}
+          {track.artist && (
+            <span className="font-normal text-zinc-300"> – {track.artist}</span>
+          )}
+        </Text>
+      </div>
     </motion.section>
   );
 }

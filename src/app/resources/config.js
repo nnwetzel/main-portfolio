@@ -39,7 +39,7 @@ const font = {
 
 const style = {
   theme: "light", // theme is not necessary when using ThemeProvider (default)
-  neutral: "gray", // sand | gray | slate
+  neutral: "slate", // sand | gray | slate
   brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
