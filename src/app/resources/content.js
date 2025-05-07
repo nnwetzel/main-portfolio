@@ -42,7 +42,7 @@ const home = {
   headline: <>Hey, I'm Nathaniel</>,
   subline: (
     <>
-      I'm currently interning at Amazon as a SDE.
+      I'm currently interning at Wolters Kluwer as a SWE. This summer, I'm interning at Amazon as a SDE.
     </>
   ),
 };
