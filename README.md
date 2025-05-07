@@ -1,6 +1,7 @@
 # Main Portfolio
 
 Main portfolio featuring projects, experience, and contact information.
+
 View the portfolio: https://www.nnwetzel.me/
 
 # Prerequisites
