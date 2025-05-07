@@ -72,6 +72,42 @@ const about = {
       </>
     ),
   },
+  studies: {
+    display: true, // set to false to hide this section
+    title: "Education",
+    institutions: [
+      {
+        name: "Northeastern University",
+        description: <>Bachelor of Science in Computer Science</>,
+      },
+    ],
+  },
+  technical: {
+    display: true,
+    title: "Technical Skills",
+    skills: [
+      {
+        title: "Languages",
+        description: <>Java, Python, Bash, HTML/CSS, JavaScript</>,
+        images: [],
+      },
+      {
+        title: "Frameworks & Tools",
+        images: [],
+        description: (
+          <>
+            Git, AWS (CDK, Lambda, EventBridge, CloudWatch, S3, IAM, VPC, CloudFormation), Azure, Docker, Kubernetes, Jenkins, Ansible, Dagger, VMware, Linux, JUnit, Mockito, Jira, Confluence, Agile
+          </>
+        ),
+        images: [],
+      },
+      {
+        title: "Libraries & Databases",
+        description: <>FastAPI, Uvicorn, requests, pandas, NumPy, matplotlib, Elasticsearch</>,
+        images: [],
+      },
+    ],
+  },
   work: {
     display: true, // set to false to hide this section
     title: "Experience",
@@ -127,42 +163,6 @@ const about = {
             Enhanced engineering on-call visibility by resolving a high-severity incident to ensure timely invoice rendering anddelivery.
           </>,
         ],
-        images: [],
-      },
-    ],
-  },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Education",
-    institutions: [
-      {
-        name: "Northeastern University",
-        description: <>Bachelor of Science in Computer Science</>,
-      },
-    ],
-  },
-  technical: {
-    display: true,
-    title: "Technical Skills",
-    skills: [
-      {
-        title: "Languages",
-        description: <>Java, Python, Bash, HTML/CSS, JavaScript</>,
-        images: [],
-      },
-      {
-        title: "Frameworks & Tools",
-        images: [],
-        description: (
-          <>
-            Git, AWS (CDK, Lambda, EventBridge, CloudWatch, S3, IAM, VPC, CloudFormation), Azure, Docker, Kubernetes, Jenkins, Ansible, Dagger, VMware, Linux, JUnit, Mockito, Jira, Confluence, Agile
-          </>
-        ),
-        images: [],
-      },
-      {
-        title: "Libraries & Databases",
-        description: <>FastAPI, Uvicorn, requests, pandas, NumPy, matplotlib, Elasticsearch</>,
         images: [],
       },
     ],
