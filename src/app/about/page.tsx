@@ -248,7 +248,7 @@ export default function About() {
 
           {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginTop="32" marginBottom="m">
+              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginTop="24" marginBottom="m">
                 {about.studies.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
@@ -268,7 +268,7 @@ export default function About() {
 
           {about.technical.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginTop="32" marginBottom="m">
+              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginTop="24" marginBottom="m">
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
