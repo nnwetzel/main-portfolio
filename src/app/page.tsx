@@ -85,8 +85,8 @@ export default function Home() {
             delay={0.4}
             fillWidth
             horizontal="start"
-            paddingTop="56"
-            paddingBottom="4"
+            paddingTop="32"
+            paddingBottom="0"
           >
             <Column gap="s">
               <Heading variant="display-strong-xs">Now Playing</Heading>

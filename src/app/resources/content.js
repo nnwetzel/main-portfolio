@@ -101,7 +101,10 @@ const about = {
         role: "Software Engineer Intern",
         achievements: [
           <>
-            UpToDate AI, Patient Engagement Solutions
+            Migrated a containerized dosing NLP service to Azure Kubernetes Service; refactored code for modularity, implemented secure credential injection with Docker BuildKit secrets, loaded data from Azure Blob Storage, and integrated OpenAI API to generate accurate clinical dosing responses.
+          </>,
+          <>
+            Leveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts.
           </>,
         ],
         images: [],
@@ -112,7 +115,16 @@ const about = {
         role: "Software Development Engineer Intern",
         achievements: [
           <>
-            Balance and Account Management
+            Designed and implemented a scalable metric aggregation and notification service to track the status, completeness, and estimated completion time for processing over 100,000 invoices monthly.
+          </>,
+          <>
+            Built two AWS Lambda functions in Java and Python, leveraging Elasticsearch, CloudWatch, and Event Bridge for real-time metric collection and automated notifications.
+          </>,
+          <>
+            Developed an infrastructure-as-code module using Amazon CDK for deploying the Lambda service within a VPC, integrating Dagger for secure and efficient operations.
+          </>,
+          <>
+            Enhanced engineering on-call visibility by resolving a high-severity incident to ensure timely invoice rendering anddelivery.
           </>,
         ],
         images: [],
