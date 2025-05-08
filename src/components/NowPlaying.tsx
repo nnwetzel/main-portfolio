@@ -63,7 +63,7 @@ export default function NowPlaying() {
               {track.title}
             </a>
           ) : (
-            <strong>{track.title}</strong>
+            <span>{track.title}</span>
           )}
           {track.artist && (
             <span className="font-normal text-zinc-300"> – {track.artist}</span>
