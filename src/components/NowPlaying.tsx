@@ -21,33 +21,27 @@ interface TrackInfo {
 
 export default function NowPlaying() {
   const [track, setTrack] = useState<TrackInfo | null>(null);
-  const [isUnavailable, setIsUnavailable] = useState(false);
 
   useEffect(() => {
     fetch("https://lastfm-last-played.biancarosa.com.br/natsoysauce/latest-song")
       .then((res) => res.json())
       .then((json) => {
-        const name = json?.track?.name;
-        const artist = json?.track?.artist?.["#text"];
-
-        if (!name || name.toLowerCase() === "unavailable") {
-          setIsUnavailable(true);
-          return;
-        }
-
+        const { name, artist } = json.track;
         setTrack({
           title: name,
-          artist: artist ?? "",
+          artist: artist?.["#text"] ?? "",
         });
       })
       .catch(() => {
-        setIsUnavailable(true);
+        setTrack({ title: "Unavailable", artist: "" });
       });
   }, []);
 
-  const spotifySearchUrl = track
-    ? `https://open.spotify.com/search/${encodeURIComponent(`${track.title} ${track.artist}`)}`
-    : "";
+  if (!track) return null;
+
+  const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(
+    `${track.title} ${track.artist}`
+  )}`;
 
   return (
     <motion.section
@@ -57,9 +51,9 @@ export default function NowPlaying() {
       animate="show"
     >
       <div className="max-w-[42rem] w-full text-left px-6 sm:px-0 space-y-5">
-        {track ? (
-          <Text className="mt-2 text-base font-medium text-zinc-100 dark:text-white">
-            🎧{" "}
+        <Text className="mt-2 text-base font-medium text-zinc-100 dark:text-white">
+          🎧{" "}
+          {track.title !== "Unavailable" ? (
             <a
               href={spotifySearchUrl}
               target="_blank"
@@ -68,15 +62,13 @@ export default function NowPlaying() {
             >
               {track.title}
             </a>
-            {track.artist && (
-              <span className="font-normal text-zinc-300"> – {track.artist}</span>
-            )}
-          </Text>
-        ) : isUnavailable ? (
-          <Text className="mt-2 text-base italic text-zinc-400 dark:text-zinc-500">
-            No recent song played
-          </Text>
-        ) : null}
+          ) : (
+            <span>{track.title}</span>
+          )}
+          {track.artist && (
+            <span className="font-normal text-zinc-300"> – {track.artist}</span>
+          )}
+        </Text>
       </div>
     </motion.section>
   );
