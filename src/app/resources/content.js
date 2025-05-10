@@ -96,7 +96,7 @@ const about = {
         images: [],
         description: (
           <>
-            Git, AWS (CDK, Lambda, EventBridge, CloudWatch, S3, IAM, VPC, CloudFormation), Azure, Docker, Kubernetes, Jenkins, Ansible, Dagger, VMware, Linux, JUnit, Mockito, Jira, Confluence, Agile
+            Git, AWS (CDK, Lambda, EventBridge, CloudWatch, S3, IAM, VPC, CloudFormation), Azure, Docker, Kubernetes, Jenkins, Ansible, Dagger, Linux, JUnit, Mockito, Jira, Agile
           </>
         ),
         images: [],
