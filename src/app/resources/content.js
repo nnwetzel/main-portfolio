@@ -143,7 +143,7 @@ const about = {
             Set up and integrated Azure Blob Storage to retrieve and parse drug data for payload processing and generate clinical dosing recommendations via the OpenAI APILeveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts.
           </>,
           <>
-          L everaged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts
+          Leveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts
           </>,
         ],
         images: [],
