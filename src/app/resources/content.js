@@ -140,10 +140,10 @@ const about = {
             Spearheaded development of an NLP service for clinical dosing in Python by adapting existing code, containerized the application with Docker, and deployed it to Azure Kubernetes Service
           </>,
           <>
-            Set up and integrated Azure Blob Storage to retrieve and parse drug data for payload processing and generate clinical dosing recommendations via the OpenAI APILeveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts.
+            Set up and integrated Azure Blob Storage to retrieve and parse drug data for payload processing and generate clinical dosing recommendations via the OpenAI API
           </>,
           <>
-          Leveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts
+            Leveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts
           </>,
         ],
         images: [],
