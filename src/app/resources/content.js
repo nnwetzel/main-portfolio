@@ -88,7 +88,7 @@ const about = {
     skills: [
       {
         title: "Languages",
-        description: <>Java, Python, Bash, HTML/CSS, JavaScript</>,
+        description: <>Java, Python, Bash, HTML5/CSS, JavaScript</>,
         images: [],
       },
       {
@@ -137,10 +137,13 @@ const about = {
         role: "Software Engineer Intern",
         achievements: [
           <>
-            Migrated a containerized dosing NLP service to Azure Kubernetes Service; refactored code for modularity, implemented secure credential injection with Docker BuildKit secrets, loaded data from Azure Blob Storage, and integrated OpenAI API to generate accurate clinical dosing responses.
+            Spearheaded development of an NLP service for clinical dosing in Python by adapting existing code, containerized the application with Docker, and deployed it to Azure Kubernetes Service
           </>,
           <>
-            Leveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts.
+            Set up and integrated Azure Blob Storage to retrieve and parse drug data for payload processing and generate clinical dosing recommendations via the OpenAI APILeveraged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts.
+          </>,
+          <>
+          L everaged Ansible to automate agent installation, developed comprehensive audit scripts, and implemented a configurable internal patch management tool across Windows and Linux hosts
           </>,
         ],
         images: [],
