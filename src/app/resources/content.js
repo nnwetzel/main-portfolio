@@ -114,7 +114,7 @@ const about = {
     experiences: [
       {
         company: "Amazon",
-        timeframe: "Jun 2025 - Present",
+        timeframe: "Jun 2025 - Sep 2025",
         role: "Software Development Engineer Intern",
         achievements: [
           <>
@@ -133,7 +133,7 @@ const about = {
       },
       {
         company: "Wolters Kluwer",
-        timeframe: "Jan - Jun 2025",
+        timeframe: "Jan 2025 - Present",
         role: "Software Engineer Intern",
         achievements: [
           <>
