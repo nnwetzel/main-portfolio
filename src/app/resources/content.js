@@ -154,16 +154,16 @@ const about = {
         role: "Software Development Engineer Intern",
         achievements: [
           <>
-            Designed and implemented a scalable metric aggregation and notification service to track the status, completeness, and estimated completion time for processing over 100,000 invoices monthly.
+            Designed and implemented a scalable metric aggregation and notification service to track the status, completeness, and estimated completion time for processing over 100,000 invoices monthly
           </>,
           <>
-            Built two AWS Lambda functions in Java and Python, leveraging Elasticsearch, CloudWatch, and Event Bridge for real-time metric collection and automated notifications.
+            Built two AWS Lambda functions in Java and Python, leveraging Elasticsearch, CloudWatch, and Event Bridge for real-time metric collection and automated notifications
           </>,
           <>
-            Developed an infrastructure-as-code module using Amazon CDK for deploying the Lambda service within a VPC, integrating Dagger for secure and efficient operations.
+            Developed an infrastructure-as-code module using Amazon CDK for deploying the Lambda service within a VPC, integrating Dagger for secure and efficient operations
           </>,
           <>
-            Enhanced engineering on-call visibility by resolving a high-severity incident to ensure timely invoice rendering anddelivery.
+            Enhanced engineering on-call visibility by resolving a high-severity incident to ensure timely invoice rendering and delivery
           </>,
         ],
         images: [],
