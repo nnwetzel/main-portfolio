@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Heading, Text } from "@/once-ui/components";
+import { Text } from "@/once-ui/components";
 
 const VARIANTS_SECTION = {
   hidden: { opacity: 0, y: 20 },
@@ -23,21 +23,34 @@ export default function NowPlaying() {
   const [track, setTrack] = useState<TrackInfo | null>(null);
 
   useEffect(() => {
+    const fallbackTimeout = setTimeout(() => {
+      setTrack({ title: "Unavailable", artist: "" });
+    }, 2000); // fallback if fetch takes too long or fails silently
+
     fetch("https://lastfm-last-played.biancarosa.com.br/natsoysauce/latest-song")
       .then((res) => res.json())
       .then((json) => {
-        const { name, artist } = json.track;
-        setTrack({
-          title: name,
-          artist: artist?.["#text"] ?? "",
-        });
+        console.log("Last.fm API response:", json); // dev logging, remove in prod
+
+        const name = json?.track?.name;
+        const artistText = json?.track?.artist?.["#text"];
+
+        if (name && artistText) {
+          clearTimeout(fallbackTimeout);
+          setTrack({ title: name, artist: artistText });
+        }
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error("Failed to fetch track:", err);
         setTrack({ title: "Unavailable", artist: "" });
       });
+
+    return () => clearTimeout(fallbackTimeout);
   }, []);
 
-  if (!track) return null;
+  if (!track) {
+    return <Text className="text-base text-zinc-400">Loading...</Text>;
+  }
 
   const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(
     `${track.title} ${track.artist}`
@@ -59,6 +72,7 @@ export default function NowPlaying() {
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold underline hover:opacity-80 transition"
+              aria-label={`Listen to ${track.title} by ${track.artist} on Spotify`}
             >
               {track.title}
             </a>
