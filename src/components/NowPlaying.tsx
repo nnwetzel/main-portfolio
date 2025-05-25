@@ -18,7 +18,6 @@ interface TrackInfo {
   title: string;
   artist: string;
   url?: string;
-  nowPlaying?: boolean;
   error?: boolean;
 }
 
@@ -27,7 +26,7 @@ export default function NowPlaying() {
 
   useEffect(() => {
     const fallbackTimeout = setTimeout(() => {
-      setTrack({ title: "Not playing", artist: "", error: true });
+      setTrack({ title: "Unavailable", artist: "", error: true });
     }, 2000);
 
     fetch("https://lastfm-last-played.biancarosa.com.br/natsoysauce/latest-song")
@@ -36,11 +35,10 @@ export default function NowPlaying() {
         const name = json?.track?.name;
         const artistText = json?.track?.artist?.["#text"];
         const url = json?.track?.url;
-        const isNowPlaying = json?.track?.["@attr"]?.nowplaying === "true";
 
         if (name && artistText) {
           clearTimeout(fallbackTimeout);
-          setTrack({ title: name, artist: artistText, url, nowPlaying: isNowPlaying });
+          setTrack({ title: name, artist: artistText, url });
         } else {
           setTrack({ title: "Unavailable", artist: "", error: true });
         }
@@ -67,12 +65,9 @@ export default function NowPlaying() {
       <div className="max-w-[42rem] w-full text-left px-6 sm:px-0 space-y-5">
         <Text className="mt-2 text-base font-medium text-zinc-100 dark:text-white">
           {track.error ? (
-            <>
-              🛑 <span className="text-zinc-400">Not playing</span>
-            </>
+            <span className="text-zinc-400">Unavailable</span>
           ) : (
             <>
-              {track.nowPlaying ? "🎧 Now playing: " : "📻 Last played: "}
               {track.url ? (
                 <a
                   href={track.url}
