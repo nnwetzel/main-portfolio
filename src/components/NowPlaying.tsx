@@ -17,6 +17,7 @@ const TRANSITION_SECTION = {
 interface TrackInfo {
   title: string;
   artist: string;
+  url?: string;
 }
 
 export default function NowPlaying() {
@@ -24,7 +25,7 @@ export default function NowPlaying() {
 
   useEffect(() => {
     const fallbackTimeout = setTimeout(() => {
-      setTrack({ title: "Unavailable", artist: "" });
+      setTrack({ title: "Not playing", artist: "" });
     }, 2000); // fallback if fetch takes too long or fails silently
 
     fetch("https://lastfm-last-played.biancarosa.com.br/natsoysauce/latest-song")
@@ -34,10 +35,11 @@ export default function NowPlaying() {
 
         const name = json?.track?.name;
         const artistText = json?.track?.artist?.["#text"];
+        const url = json?.track?.url;
 
         if (name && artistText) {
           clearTimeout(fallbackTimeout);
-          setTrack({ title: name, artist: artistText });
+          setTrack({ title: name, artist: artistText, url });
         }
       })
       .catch((err) => {
@@ -52,10 +54,6 @@ export default function NowPlaying() {
     return <Text className="text-base text-zinc-400">Loading...</Text>;
   }
 
-  const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(
-    `${track.title} ${track.artist}`
-  )}`;
-
   return (
     <motion.section
       variants={VARIANTS_SECTION}
@@ -66,13 +64,13 @@ export default function NowPlaying() {
       <div className="max-w-[42rem] w-full text-left px-6 sm:px-0 space-y-5">
         <Text className="mt-2 text-base font-medium text-zinc-100 dark:text-white">
           🎧{" "}
-          {track.title !== "Unavailable" ? (
+          {track.title !== "Unavailable" && track.url ? (
             <a
-              href={spotifySearchUrl}
+              href={track.url}
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold underline hover:opacity-80 transition"
-              aria-label={`Listen to ${track.title} by ${track.artist} on Spotify`}
+              aria-label={`Listen to ${track.title} by ${track.artist} on Last.fm`}
             >
               {track.title}
             </a>
