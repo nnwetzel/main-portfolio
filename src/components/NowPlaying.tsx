@@ -64,6 +64,7 @@ export default function NowPlaying() {
     >
       <div className="max-w-[42rem] w-full text-left px-6 sm:px-0 space-y-5">
         <Text className="mt-2 text-base font-medium text-zinc-100 dark:text-white">
+          🎧{" "}
           {track.error ? (
             <span className="text-zinc-400">Unavailable</span>
           ) : (
