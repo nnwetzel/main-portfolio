@@ -2,7 +2,7 @@
 
 Main portfolio featuring projects, experience, and contact information.
 
-View the portfolio: https://www.nnwetzel.me/
+View the portfolio: https://www.nnwetzel.dev/
 
 # Prerequisites
 1. Clone the repository
